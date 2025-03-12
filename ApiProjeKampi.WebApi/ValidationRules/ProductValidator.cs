@@ -17,8 +17,8 @@ namespace ApiProjeKampi.WebApi.ValidationRules
                 .WithMessage("En Fazla 50 karakter veri girişi yapın!");
 
             RuleFor(x=>x.Price).NotEmpty().WithMessage("Ürün Fiyatı boş geçilemez")
-                .LessThan(0).WithMessage("Ürün fiyatı negatif olamaz.")
-                .GreaterThan(1000).WithMessage("Ürün fiyatı 1000 den büyük olamaz");
+                .GreaterThan(0).WithMessage("Ürün fiyatı negatif olamaz.")
+                .LessThan(1000).WithMessage("Ürün fiyatı 1000 den büyük olamaz");
 
 
             RuleFor(x => x.ProductDescription).NotEmpty().WithMessage("Ürün Açıklaması boş geçilemez");
