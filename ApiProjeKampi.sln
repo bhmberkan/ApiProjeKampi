@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProjeKampi.WebApi", "ApiProjeKampi.WebApi\ApiProjeKampi.WebApi.csproj", "{7440F411-E7A3-415D-A273-799E777DDDB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProjeKampi.WebUI", "ApiProjeKampi.WebUI\ApiProjeKampi.WebUI.csproj", "{8ADBC278-2AB2-48A7-9C76-98CA7480BCC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7440F411-E7A3-415D-A273-799E777DDDB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7440F411-E7A3-415D-A273-799E777DDDB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7440F411-E7A3-415D-A273-799E777DDDB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ADBC278-2AB2-48A7-9C76-98CA7480BCC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ADBC278-2AB2-48A7-9C76-98CA7480BCC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ADBC278-2AB2-48A7-9C76-98CA7480BCC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ADBC278-2AB2-48A7-9C76-98CA7480BCC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
