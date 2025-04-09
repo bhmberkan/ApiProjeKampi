@@ -1,4 +1,7 @@
-﻿<section id="why-us" class="why-us section light-background">
+﻿@model List<ApiProjeKampi.WebUI.Dtos.ServiceDtos.ResultServiceDto>
+
+
+<section id="why-us" class="why-us section light-background">
 
     <div class="container">
 
@@ -20,35 +23,20 @@
             <div class="col-lg-8 d-flex align-items-stretch">
                 <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
 
-                    <div class="col-xl-4">
-                        <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                            <i class="bi bi-clipboard-data"></i>
-                            <h4> Anın Tadını Çıkarın</h4>
-                            <p> İçerik: Yalnızca karnınızı değil, ruhunuzu da doyuracak sıcak, keyifli ve dinlendirici bir ortam sun  </p>
+                    @foreach (var x in Model)
+                    {
+                        <div class="col-xl-4">
+                            <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                                <i class="@x.IconUrl"></i>
+                                <h4> @x.Title</h4>
+                                <p>@x.Description </p>
+                            </div>
                         </div>
-                    </div><!-- End Icon Box -->
 
-                    <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                            <i class="bi bi-gem"></i>
-                            <h4>Ullamco laboris ladore lore pan</h4>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                        </div>
-                    </div><!-- End Icon Box -->
-
-                    <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
-                        <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                            <i class="bi bi-inboxes"></i>
-                            <h4>Labore consequatur incidid dolore</h4>
-                            <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                        </div>
-                    </div><!-- End Icon Box -->
-
+                        <!-- End Icon Box -->
+                    }
                 </div>
             </div>
-
         </div>
-
     </div>
-
 </section>
