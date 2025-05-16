@@ -1,0 +1,44 @@
+﻿@model List<ResultChefDto>
+
+<section id="chefs" class="chefs section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>chefs</h2>
+        <p><span>Our</span> <span class="description-title">Proffesional Chefs<br></span></p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+        <div class="row gy-4">
+
+            @foreach (var x in Model)
+            {
+                
+            <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="@x.ImageUrl" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href=""><i class="bi bi-twitter-x"></i></a>
+                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-instagram"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>@x.NameSurname</h4>
+                        <span>@x.Title</span>
+                        <p>@x.Description</p>
+                    </div>
+                </div>
+            </div><!-- End Chef Team Member -->
+            }
+
+
+
+        </div>
+
+    </div>
+
+</section><!-- /Chefs Section -->
