@@ -1,0 +1,41 @@
+﻿@model List<ResultMessageByIsReadFalseDto>
+
+<li class="dropdown dropdown-list-toggle">
+    <a href="#" data-toggle="dropdown"
+       class="nav-link nav-link-lg message-toggle">
+        <i data-feather="mail"></i>
+        <span class="badge headerBadge1">
+            @Model.Count
+        </span>
+    </a>
+    <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+        <div class="dropdown-header">
+            Messages
+            <div class="float-right">
+                <a href="#">Tümünü Okundu Olarak işaretle</a>
+            </div>
+        </div>
+        <div class="dropdown-list-content dropdown-list-message">
+           @foreach (var x in Model)
+            {
+                <a href="/Message/MessageDetail/@x.MessageId" class="dropdown-item">
+                    <span class="dropdown-item-avatar
+											text-white">
+                        <img alt="image" src="/otika-bootstrap-admin-template/assets/img/users/user-1.png" class="rounded-circle">
+                    </span> <span class="dropdown-item-desc">
+                        <span class="message-user">
+                            @x.NameSurname
+                        </span>
+                        <span class="time messege-text">@x.Subject</span>
+                        <span class="time">@x.SendDate.ToString("dd MMMM yyy - HH:mm")</span>
+                    </span>
+                </a>
+            }
+           
+           
+        </div>
+        <div class="dropdown-footer text-center">
+            <a href="/Mesagge/MessageList">Tüm Mesajları Gör <i class="fas fa-chevron-right"></i></a>
+        </div>
+    </div>
+</li>
