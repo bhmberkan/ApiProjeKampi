@@ -1,0 +1,57 @@
+﻿@model List<ResultCategoryDto>
+
+
+@{
+    ViewData["Title"] = "CategoryList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+
+    <section class="section">
+        <div class="section-body">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Category Listesi</h4>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Kategory Adı</th>
+                                        <th scope="col">Sil</th>
+                                        <th scope="col">Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                 @foreach (var x in Model)
+                                {
+                                    <tr>
+                                        <th scope="row">@x.CategoryId</th>
+                                        <td>@x.CategoryName</td>
+                                        <td><a href="/Category/DeleteCategory/@x.CategoryId" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Category/UpdateCategory/@x.CategoryId" class="btn btn-success">Güncelle</a></td>
+                                        
+                                    </tr>
+                                }
+                                   
+                                 
+                                </tbody>
+                            </table>
+                        <a href="/Category/CreateCategory/" class="btn btn-info">Yeni Kategory Ekle</a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+   
+

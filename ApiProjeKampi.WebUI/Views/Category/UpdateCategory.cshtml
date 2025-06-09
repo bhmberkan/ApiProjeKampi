@@ -1,0 +1,37 @@
+﻿@model GetCategoryByIdDto
+
+@{
+    ViewData["Title"] = "GetCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Category Güncelleme Sayfası</h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <input type="hidden" asp-for="CategoryId">
+                            <label>Kategori Adı</label>
+                            <input type="text" asp-for="CategoryName" class="form-control" />
+                            <br />
+                            <button class="btn btn-success"> Kategoriyi Güncelle</button>
+                        </form>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
