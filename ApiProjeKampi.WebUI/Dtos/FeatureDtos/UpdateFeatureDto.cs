@@ -1,4 +1,4 @@
-﻿namespace ApiProjeKampi.WebApi.Dtos.FeaturesDtos
+﻿namespace ApiProjeKampi.WebUI.Dtos.FeatureDtos
 {
     public class UpdateFeatureDto
     {
