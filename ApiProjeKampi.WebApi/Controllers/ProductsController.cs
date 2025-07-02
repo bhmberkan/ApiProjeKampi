@@ -71,12 +71,21 @@ namespace ApiProjeKampi.WebApi.Controllers
             var validationResult = _validator.Validate(product);
             if (!validationResult.IsValid)
             {
-                return BadRequest(validationResult.Errors.Select(x=>x.ErrorMessage));
+                return BadRequest(validationResult.Errors.Select(x => x.ErrorMessage));
             }
 
             _context.Products.Update(product);
             _context.SaveChanges();
             return Ok("Ürün güncelleme işlemi başarılı");
+        }
+
+        [HttpPut("UpdateProductWithCategory")]
+        public IActionResult UpdateProductWithCategory(UpdateProductDto updateProductDto)
+        {
+            var value = _mapper.Map<Product>(updateProductDto);
+            _context.Products.Update(value);
+            _context.SaveChanges();
+            return Ok("Güncelleme işlemi başarılı");
         }
 
         [HttpPost("CreateProductWithCategory")]

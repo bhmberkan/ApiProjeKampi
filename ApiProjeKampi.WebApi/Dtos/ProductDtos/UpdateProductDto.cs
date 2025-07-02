@@ -1,6 +1,6 @@
-﻿namespace ApiProjeKampi.WebUI.Dtos.ProductDtos
+﻿namespace ApiProjeKampi.WebApi.Dtos.ProductDtos
 {
-    public class ResultProductDto
+    public class UpdateProductDto
     {
         public int ProductId { get; set; }
 
@@ -11,6 +11,6 @@
         public string ImageUrl { get; set; }
 
         public int CategoryId { get; set; }
-        public string CategoryName { get; set; }
+       
     }
 }
