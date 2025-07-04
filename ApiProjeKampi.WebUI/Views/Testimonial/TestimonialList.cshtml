@@ -1,0 +1,66 @@
+﻿@model IPagedList<ResultTestimonialDto>
+
+@{
+    ViewData["Title"] = "TestimonialList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+   
+}
+
+
+
+
+<link href="~/otika-bootstrap-admin-template/assets/css/Paging.css" rel="stylesheet" />
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Müşteriler </h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Müşteri Adı</th>
+                                    <th scope="col">Müşteri Unvanı</th>
+                                    <th scope="col">Müşteri Yorumu</th>
+                                
+
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var x in Model)
+                                {
+                                 
+                                    <tr>
+                                        <th scope="row">@x.testimonialId</th>
+                                        <td>@x.nameSurname</td>
+                                        <td>@x.title</td>
+                                        <td>@x.comment</td>
+                                        <td><a href="/Testimonial/DeleteTestimonial/@x.testimonialId" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Testimonial/UpdateTestimonial/@x.testimonialId" class="btn btn-success">Güncelle</a></td>
+
+                                    </tr>
+                                }
+
+
+                              
+
+                            </tbody>
+                        </table>
+                        @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("TestimonialList", new { sayfa }))
+                        <a href="/Testimonial/CreateTestimonial/" class="btn btn-info">Ekle</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+

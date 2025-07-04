@@ -22,6 +22,7 @@ namespace ApiProjeKampi.WebApi.Context
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<YumyEvent> yumyEvents { get; set; }
         public DbSet<Notification> notifications { get; set; }
+        public DbSet<About> abouts{ get; set; }
 
 
 

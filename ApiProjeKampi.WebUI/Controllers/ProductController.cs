@@ -96,7 +96,7 @@ namespace ApiProjeKampi.WebUI.Controllers
         {
             var categoryList = await GetCategoryListWithDropdown();
             ViewBag.v = categoryList;
-            // viewı yazılacak.
+     
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7222/api/Products/GetProduct?id=" + id);
             if (responseMessage.IsSuccessStatusCode)
