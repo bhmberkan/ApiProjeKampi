@@ -1,4 +1,5 @@
-﻿using ApiProjeKampi.WebApi.Dtos.CategoryDtos;
+﻿using ApiProjeKampi.WebApi.Dtos.AboutDtos;
+using ApiProjeKampi.WebApi.Dtos.CategoryDtos;
 using ApiProjeKampi.WebApi.Dtos.FeaturesDtos;
 using ApiProjeKampi.WebApi.Dtos.MessageDtos;
 using ApiProjeKampi.WebApi.Dtos.NotificationDtos;
@@ -32,6 +33,11 @@ namespace ApiProjeKampi.WebApi.Mapping
             CreateMap<Category, ResultCategorytDto>().ReverseMap();
             CreateMap<Category, UpdateCategoryDto>().ReverseMap();
             CreateMap<Category, GetByIdCategoryDto>().ReverseMap();
+
+            CreateMap<About, CreateAboutDto>().ReverseMap();
+            CreateMap<About, ResultAboutDto>().ReverseMap();
+            CreateMap<About, UpdateAboutDto>().ReverseMap();
+            CreateMap<About, GetAboutByIdDto>().ReverseMap();
 
 
             CreateMap<Product,CreateProductDto>().ReverseMap();
