@@ -1,0 +1,67 @@
+﻿@model IPagedList<ResultYummyEventDto>
+
+@{
+    ViewData["Title"] = "YummyEventList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+
+
+
+<link href="~/otika-bootstrap-admin-template/assets/css/Paging.css" rel="stylesheet" />
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Etkinlik Orgaizasyon Listesi</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Organizasyon Adı</th>
+                                    <th scope="col">Organizasyon Açıklaması</th>
+                                    <th scope="col">Organizasyon Fiyatı</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var x in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <th scope="row">@count</th>
+                                        <td>@x.Title</td>
+                                        <td>@x.Description</td>
+                                        <td>@x.Price</td>
+                                        <td><a href="/YummyEvent/DeleteYummyEvent/@x.YumyEventId" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/YummyEvent/UpdateYummyEvent/@x.YumyEventId" class="btn btn-success">Güncelle</a></td>
+
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+                        @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("YummyEventList", new { sayfa }))
+                        <a href="/YummyEvent/CreateYummyEvent/" class="btn btn-info">Yeni Etkinlik Ekle</a>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+

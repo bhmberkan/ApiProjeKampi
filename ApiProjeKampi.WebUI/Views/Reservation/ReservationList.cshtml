@@ -1,0 +1,77 @@
+﻿@model IPagedList<ResultReservationDto>
+
+@{
+    ViewData["Title"] = "ReservationList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+
+
+
+<link href="~/otika-bootstrap-admin-template/assets/css/Paging.css" rel="stylesheet" />
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Rezervasyon Listesi</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Müşteri Adı</th>
+                                    <th scope="col">Rezervasyon Tarih</th>
+                                    <th scope="col">Rezervasyon Saat</th>
+                                    <th scope="col">Kişi Sayısı</th>
+                                    <th scope="col">Rezervasyon Durumu</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                    <th scope="col">Onayla</th>
+                                    <th scope="col">İptal Et</th>
+                                    <th scope="col">Beklet</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var x in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <th scope="row">@count</th>
+                                        <td>@x.NameSurname</td>
+                                        <td>@x.ReservationDate.ToString("dd-MMM-yyyy")</td>
+                                        <td>@x.ReservationTime</td>
+                                        <td>@x.CountOfPeople</td>
+                                        <td>@x.ReservationStatus</td>
+                                        <td><a href="/Reservation/DeleteReservation/@x.ReservationId" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Reservation/UpdateReservation/@x.ReservationId" class="btn btn-success">Güncelle</a></td>
+                                        <td><a href="/Reservation/AccepReservation/@x.ReservationId" class="btn btn-info">Onayla</a></td>
+                                        <td><a href="/Reservation/CancelReservation/@x.ReservationId" class="btn btn-dark">İptal</a></td>
+                                        <td><a href="/Reservation/WaitReservation/@x.ReservationId" class="btn btn-warning">Beklet</a></td>
+
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+                        @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("ReservationList", new { sayfa }))
+                     @*    <a href="/Reservation/CreateReservation/" class="btn btn-info">Yeni Rezervasyon Ekle</a> *@
+                    @*  Rezervasyon işlemleri admin tarafından değil sayfadan gelecek *@
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+

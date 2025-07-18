@@ -1,0 +1,47 @@
+﻿@model CreateYummyEventDto
+@{
+    ViewData["Title"] = "CreateYummyEvent";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Etkinlik Ekleme Sayfası</h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <label>Organizasyon Adı</label>
+                            <input type="text" asp-for="Title" class="form-control" />
+                            <br />  
+                            
+                            <label> Organizasyon Açıklaması</label>
+                            <textarea class="form-control" asp-for="Description" rows="5"></textarea>
+                            <br />  
+                            <label>Organizasyon Görseli(Url)</label>
+                            <input type="text" asp-for="ImageUrl" class="form-control" />
+                            <br />  
+                            <label>Fiyat</label>
+                            <input type="text" asp-for="Price" class="form-control" />
+                            <br />  
+                         
+                            <button class="btn btn-primary"> Etkinlik Oluştur</button>
+                        </form>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
