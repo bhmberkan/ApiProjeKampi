@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiProjeKampi.WebApi.Migrations
 {
     [DbContext(typeof(ApiContext))]
-    [Migration("20250820150129_mig6")]
+    [Migration("20250822171253_mig6")]
     partial class mig6
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
