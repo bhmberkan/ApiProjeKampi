@@ -110,7 +110,7 @@ namespace ApiProjeKampi.WebUI.Models
 
         private sealed class Delta
         {
-            [JsonPropertyName("content")] public string? Contnet { get; set; }
+            [JsonPropertyName("content")] public string? Content { get; set; }
             [JsonPropertyName("role")] public string? Role { get; set; }
         }
     }
