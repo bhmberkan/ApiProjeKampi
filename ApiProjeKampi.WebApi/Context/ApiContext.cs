@@ -23,6 +23,8 @@ namespace ApiProjeKampi.WebApi.Context
         public DbSet<YumyEvent> yumyEvents { get; set; }
         public DbSet<Notification> notifications { get; set; }
         public DbSet<About> abouts{ get; set; }
+        public DbSet<EmployeeTask> employeeTasks { get; set; }
+        public DbSet<EmployeeTaskChef> EmployeeTaskChefs { get; set; }
 
 
 

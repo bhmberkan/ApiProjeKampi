@@ -17,14 +17,14 @@ namespace ApiProjeKampi.WebApi.Controllers
         }
 
         [HttpGet]
-        public IActionResult ServiceList()
+        public IActionResult TestimonialList()
         {
             var values = _context.Testimonials.ToList();
             return Ok(values);
         }
 
         [HttpPost]
-        public IActionResult CreateService(Testimonial testimonial)
+        public IActionResult CreateTestimonial(Testimonial testimonial)
         {
             _context.Testimonials.Add(testimonial);
             _context.SaveChanges();
@@ -33,7 +33,7 @@ namespace ApiProjeKampi.WebApi.Controllers
         }
 
         [HttpDelete]
-        public IActionResult DeleteService(int id)
+        public IActionResult DeleteTestimonial(int id)
         {
             var value = _context.Testimonials.Find(id);
             _context.Testimonials.Remove(value);
@@ -42,14 +42,14 @@ namespace ApiProjeKampi.WebApi.Controllers
         }
 
         [HttpGet("GetService")] // iki tane get kullandık isimlendirme yapmalıyız
-        public IActionResult GetService(int id)
+        public IActionResult GetTestimonial(int id)
         {
             var value = _context.Testimonials.Find(id);
             return Ok(value);
         }
 
         [HttpPut]
-        public IActionResult UpdateService(Testimonial testimonial)
+        public IActionResult UpdateTestimonial(Testimonial testimonial)
         {
             _context.Testimonials.Update(testimonial);
             _context.SaveChanges();
