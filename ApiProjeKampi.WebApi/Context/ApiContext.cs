@@ -25,6 +25,7 @@ namespace ApiProjeKampi.WebApi.Context
         public DbSet<About> abouts{ get; set; }
         public DbSet<EmployeeTask> employeeTasks { get; set; }
         public DbSet<EmployeeTaskChef> EmployeeTaskChefs { get; set; }
+        public DbSet<GroupReservation> GroupReservations  { get; set; }
 
 
 
