@@ -1,6 +1,6 @@
-# 🚀 ApiProjeKampi - Çok Katmanlı API & UI Yönetim Sistemi
+# 🚀 YummyRestoran - Çok Katmanlı API & UI Yönetim Sistemi
 
-**ApiProjeKampi**, kurumsal mimari prensiplerine sadık kalınarak geliştirilmiş; API merkezli, çok katmanlı ve modern bir yönetim sistemidir. 
+**YummyRestoran**, kurumsal mimari prensiplerine sadık kalınarak geliştirilmiş; API merkezli, çok katmanlı ve modern bir yönetim sistemidir. 
 Proje, verinin güvenli bir şekilde işlenip API üzerinden dış dünyaya sunulması ve bu verilerin bir UI (Arayüz) tarafında efektif bir şekilde tüketilmesini (consuming) temel alır.
 
 ---
