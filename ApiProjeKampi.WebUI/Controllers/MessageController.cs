@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
+using X.PagedList.Extensions;
 using static ApiProjeKampi.WebUI.Controllers.AIController;
 
 namespace ApiProjeKampi.WebUI.Controllers
@@ -17,7 +18,7 @@ namespace ApiProjeKampi.WebUI.Controllers
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<IActionResult> MessageList()
+        public async Task<IActionResult> MessageList(int sayfa=1)
         {
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7222/api/Messages");
@@ -25,7 +26,7 @@ namespace ApiProjeKampi.WebUI.Controllers
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<ResultMessageDto>>(jsonData);
-                return View(values);
+                return View(values.AsQueryable().ToPagedList(sayfa, 9));
             }
             return View();
         }
